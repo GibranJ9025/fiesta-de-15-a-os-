@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invitación XV Layla Naomi</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      background: url("img/Fountain_closeup_in_Orlando.jpg") no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      border: 5px solid white;
+      border-radius: 20px;
+      margin-top: 20px;
+    }
+
+    h1, h2, h3, p {
+      text-align: center;
+    }
+
+    #contador {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #FFD700;
+    }
+
+    .poem {
+      font-style: italic;
+      white-space: pre-line;
+      margin: 20px 0;
+    }
+
+    .gallery {
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      height: 300px;
+    }
+
+    .gallery img {
+      width: 100%;
+      max-width: 33.33%;
+      transition: transform 1s;
+      position: absolute;
+      opacity: 0;
+    }
+
+    .gallery img.active {
+      opacity: 1;
+      position: relative;
+    }
+
+    form {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    label, input {
+      display: block;
+      margin: 5px auto;
+      color: #D70929;
+    }
+
+    button {
+      background-color: white;
+      color: black;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    button:hover {
+      background-color: #ddd;
+    }
+
+    .map-link {
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    .map-link a {
+      color: #aaf;
+      text-decoration: underline;
+    }
+
+    #musicaBtn, #descargarBtn {
+      position: relative;
+      z-index: 10;
+    }
+
+    canvas {
+      display: none;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Botón de Música Fuera del Contenedor -->
+  <button id="musicaBtn" onclick="iniciarMusica()">🎵 Reproducir música</button>
+
+  <div class="container">
+	  <!-- Contador -->
+    <h3>Faltan...</h3>
+    <div id="contador">Cargando...</div>
+    <h1>Para Mis XV</h1>
+    <p>Celebramos más que un cumpleaños; celebramos el inicio de un hermoso viaje. Que cada paso que des, cada sueño que sigas y cada sonrisa que regales iluminen tu camino.</p>
+    <h2>Layla Naomi Posadas Trejo</h2>
+
+    
+
+    <h3>por de  parte:</h3>
+    <p>José Miguel Posadas Domínguez</p>
+    <p>Lizbeth Trejo Contreras</p>
+    <h3> nos complace invitarlos a la celebracion del cumpleaños numero 15 de nuestra hija</h3>
+
+    <h3>Poema especial para conmemorar</h3>
+    <p class="poem">
+Lila de primavera. 
+
+En esta noche de luz y estrellas,
+brilla una flor entre las doncellas.
+Cabello negro como la noche callada,
+ojos cafés, miel de alborada.
+
+Tu sonrisa es calma, suave ternura,
+dulce reflejo de alma pura.
+Quienes te aman,  te visten de sueños,
+de pasos nuevos y anhelos pequeños.
+
+Como el jazmín que al viento se mece,
+tu corazón con dulzura florece.
+No hay diamante que más reluzca
+que tu mirada serena y dulce.
+
+Hoy danzas al ritmo del tiempo,
+dejando atrás el inocente cuento.
+Y aunque la niña ya empieza a volar,
+tu esencia dulce sabrá siempre estar.
+
+Que el camino se tiña de auroras,
+que te acompañen las horas más doradas.
+Hoy celebramos tu vida en flor,
+quince años de gracia, belleza y amor.
+    </p>
+
+    <h3>Fecha del evento</h3>
+    <p>19 de septiembre del 2025</p>
+
+    <h3>Misa</h3>
+    <p>Parroquia de San José de Gracia<br>Calle 19, No. 2, Col. José López Portillo, Iztapalapa</p>
+    <p>Hora: 17:40 hrs</p>
+    <div class="map-link">
+      <a href="https://www.google.com/maps/place/Calle+19+No+2+Jose+Lopez+Portillo+Iztapalapa" target="_blank">Ver en Google Maps</a>
+    </div>
+
+    <h3>Recepción</h3>
+    <p>Salón Majestic<br>Av. Benito Juárez No. 190, Col. Francisco Villa, Iztapalapa</p>
+    <p>Hora: de 19:30 hrs a 20:00 hrs</p>
+    <div class="map-link">
+      <a href="https://www.google.com/maps/place/Av.+Benito+Juárez+190+Francisco+Villa+Iztapalapa" target="_blank">Ver en Google Maps</a>
+    </div>
+
+    <h3>Código de vestimenta</h3>
+    <p>Casual</p>
+
+    <h3>Galería de fotos</h3>
+    <div class="gallery" id="carousel">
+      <img src="img/IMG-20250507-WA0008.jpg" class="active">
+      <img src="img/IMG-20250505-WA0009.jpg">
+      <img src="img/IMG-20250505-WA0017.jpg">
+      <img src="img/IMG-20250505-WA0002.jpg">
+      <img src="img/IMG-20250505-WA0003.jpg">
+      <img src="img/IMG-20250505-WA0004.jpg">
+      <img src="img/IMG-20250505-WA0005.jpg">
+      <img src="img/IMG-20250505-WA0006.jpg">
+      <img src="img/IMG-20250505-WA0007.jpg">
+      <img src="img/IMG-20250505-WA0010.jpg">
+      <img src="img/IMG-20250505-WA0011.jpg">
+      <img src="img/IMG-20250505-WA0012.jpg">
+      <img src="img/IMG-20250505-WA0013.jpg">
+      <img src="img/IMG-20250505-WA0016.jpg">
+      <img src="img/IMG-20250505-WA0015.jpg">
+      <img src="img/IMG-20250505-WA0018.jpg">
+      <img src="img/IMG-20250505-WA0019.jpg">
+      <img src="img/IMG-20250505-WA0020.jpg">
+      <img src="img/IMG-20260606-WA0006.jpg">
+      <img src="img/IMG-20260707-WA0007.jpg">
+    </div>
+
+    <h3>Te esperamos</h3>
+    <h3>Confirmación de asistencia</h3>
+    <form onsubmit="mostrarBoletos(event)">
+      <label for="nombre">Nombre del invitado:</label>
+      <input type="text" id="nombre" name="nombre" required>
+      <button type="submit">Consultar boletos</button>
+    </form>
+    <p id="resultado"></p>
+  </div>
+
+  <!-- Canvas y botón de descarga fuera del marco -->
+  <canvas id="boletoCanvas" width="600" height="400"></canvas>
+  <button id="descargarBtn" style="display:none;">🎟️ Descargar Boleto</button>
+
+  <audio id="musica" src="audio/creep.mp3"></audio>
+
+  <script>
+    const invitados = {
+      "Andrea Pérez": 2,
+      "Carlos García": 4,
+      "Lucía Mendoza": 3,
+      "Fernando López": 1,
+      "Maria Torres": 2
+    };
+
+    function mostrarBoletos(event) {
+      event.preventDefault();
+      const nombre = document.getElementById("nombre").value.trim();
+      const resultado = document.getElementById("resultado");
+      const canvas = document.getElementById("boletoCanvas");
+      const ctx = canvas.getContext("2d");
+
+      if (invitados[nombre]) {
+        const boletos = invitados[nombre];
+        resultado.textContent = `${nombre}, se te han asignado ${boletos} boleto(s) para la entrada al salón.`;
+
+        const imagen = new Image();
+        imagen.src = 'invitaciones/plantilla.png';
+        imagen.onload = function () {
+          canvas.style.display = "block";
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.drawImage(imagen, 0, 0, canvas.width, canvas.height);
+          ctx.fillStyle = "black";
+          ctx.font = "28px Arial";
+          ctx.fillText(`Invitado: ${nombre}`, 50, 320);
+          ctx.fillText(`Boletos: ${boletos}`, 50, 360);
+        };
+
+        document.getElementById("descargarBtn").style.display = "inline-block";
+      } else {
+        resultado.textContent = `Lo sentimos, no se encontró a ${nombre} en la lista de invitados.`;
+        canvas.style.display = "none";
+        document.getElementById("descargarBtn").style.display = "none";
+      }
+    }
+
+    document.getElementById("descargarBtn").addEventListener("click", () => {
+      const canvas = document.getElementById("boletoCanvas");
+      const enlace = document.createElement("a");
+      enlace.download = "boleto.png";
+      enlace.href = canvas.toDataURL("image/png");
+      enlace.click();
+    });
+
+    let index = 0;
+    const images = document.querySelectorAll('#carousel img');
+    setInterval(() => {
+      images.forEach(img => img.classList.remove('active'));
+      index = (index + 1) % images.length;
+      images[index].classList.add('active');
+    }, 3000);
+
+    const musica = document.getElementById('musica');
+    function iniciarMusica() {
+      setTimeout(() => {
+        musica.play();
+      }, 1000);
+    }
+
+    musica.addEventListener('ended', () => {
+      setTimeout(() => {
+        musica.currentTime = 0;
+        musica.play();
+      }, 2000);
+    });
+
+    // Contador regresivo al 19 de septiembre de 2025
+    const fechaObjetivo = new Date("2025-09-19T00:00:00").getTime();
+
+    function actualizarContador() {
+      const ahora = new Date().getTime();
+      const diferencia = fechaObjetivo - ahora;
+
+      if (diferencia < 0) {
+        document.getElementById("contador").innerHTML = "¡Hoy es el gran día!";
+        clearInterval(intervaloContador);
+        return;
+      }
+
+      const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+      document.getElementById("contador").innerHTML =
+        `${dias} días, ${horas} horas, ${minutos} minutos, ${segundos} segundos`;
+    }
+
+    const intervaloContador = setInterval(actualizarContador, 1000);
+    actualizarContador();
+  </script>
+</body>
+</html>
